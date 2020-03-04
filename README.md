@@ -1,2 +1,2 @@
 # deeplab
-deeply
+deeplab

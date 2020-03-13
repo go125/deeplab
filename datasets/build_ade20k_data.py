@@ -72,9 +72,9 @@ def _convert_dataset(dataset_split, dataset_dir, dataset_label_dir):
   seg_names = []
   for f in img_names:
     # get the filename without the extension
-    basename = os.path.basename(f).split('.')[0]
+    basename = os.path.basename(f)
     # cover its corresponding *_seg.png
-    seg = os.path.join(dataset_label_dir, basename+'.jpg')
+    seg = os.path.join(dataset_label_dir, basename)
     seg_names.append(seg)
 
   num_images = len(img_names)

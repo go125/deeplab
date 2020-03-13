@@ -28,6 +28,9 @@ from six.moves import range
 import tensorflow as tf
 from tensorflow.contrib import quantize as contrib_quantize
 from tensorflow.contrib import training as contrib_training
+import sys
+sys.path.append("./")
+sys.path.append("./slim/")
 from deeplab import common
 from deeplab import model
 from deeplab.datasets import data_generator

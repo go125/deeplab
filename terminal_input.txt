@@ -1,0 +1,54 @@
+20200313
+
+python ./build_ade20k_data.py  \
+  --train_image_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/images/training/" \
+  --train_image_label_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/annotations/training/" \
+  --val_image_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/images/validation/" \
+  --val_image_label_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/annotations/validation/" \
+  --output_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
+
+python deeplab/train.py \
+    --logtostderr \
+    --training_number_of_steps=1500 \
+    --train_split="train" \
+    --model_variant="xception_65" \
+    --atrous_rates=6 \
+    --atrous_rates=12 \
+    --atrous_rates=18 \
+    --output_stride=16 \
+    --decoder_output_stride=4 \
+    --train_crop_size="513,513" \
+    --train_batch_size=4 \
+    --min_resize_value=513 \
+    --max_resize_value=513 \
+    --resize_factor=16 \
+    --dataset="ade20k" \
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/exp/train_on_trainval_set/train"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
+
+use "mobilenet_v2"
+
+python deeplab/train.py \
+    --logtostderr \
+    --training_number_of_steps=100 \
+    --train_split="train" \
+    --model_variant="mobilenet_v2" \
+    --output_stride=16 \
+    --decoder_output_stride=4 \
+    --train_crop_size="513,513" \
+    --train_batch_size=4 \
+    --dataset="bonnet" \
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/exp/train_on_trainval_set/train"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
+
+python deeplab/vis.py \
+    --logtostderr \
+    --vis_split="val" \
+    --model_variant="mobilenet_v2" \
+    --output_stride=16 \
+    --decoder_output_stride=4 \
+    --vis_crop_size="900,900" \
+    --dataset="ade20k" \
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/exp/train_on_trainval_set/train"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/tmp"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"

@@ -74,14 +74,14 @@ def _convert_dataset(dataset_split, dataset_dir, dataset_label_dir):
     # get the filename without the extension
     basename = os.path.basename(f).split('.')[0]
     # cover its corresponding *_seg.png
-    seg = os.path.join(dataset_label_dir, basename+'.png')
+    seg = os.path.join(dataset_label_dir, basename+'.jpg')
     seg_names.append(seg)
 
   num_images = len(img_names)
   num_per_shard = int(math.ceil(num_images / _NUM_SHARDS))
 
   image_reader = build_data.ImageReader('jpeg', channels=3)
-  label_reader = build_data.ImageReader('png', channels=1)
+  label_reader = build_data.ImageReader('jpeg', channels=3)
 
   for shard_id in range(_NUM_SHARDS):
     output_filename = os.path.join(

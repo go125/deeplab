@@ -9,7 +9,7 @@ python ./build_ade20k_data.py  \
 
 python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=1001000 \
+    --training_number_of_steps=1010000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \

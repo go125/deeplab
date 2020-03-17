@@ -9,7 +9,7 @@ python ./build_ade20k_data.py  \
 
 python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=1010000 \
+    --training_number_of_steps=1001000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
@@ -28,6 +28,6 @@ python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/exp/train_on_trainval_set/train"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/tmp"\
+    --checkpoint_dir="/home/ubuntu/data/deeplabv3_mnv2_ade20k_train_2018_12_03"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/tmp2"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"

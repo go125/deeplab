@@ -9,7 +9,7 @@ python ./build_ade20k_data.py  \
 
 nohup python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=5000 \
+    --training_number_of_steps=100000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
@@ -18,8 +18,8 @@ nohup python deeplab/train.py \
     --train_batch_size=4 \
     --dataset="ade20k" \
     --tf_initial_checkpoint="/home/ubuntu/data/deeplabv3_mnv2_ade20k_train_2018_12_03/model.ckpt" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out4.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319_2" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out6.log &
 
 nohup python deeplab/vis.py \
     --logtostderr \
@@ -29,7 +29,7 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200319"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out5.log &
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200319_2"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319_2_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out7.log &
 

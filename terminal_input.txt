@@ -29,7 +29,7 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200317"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200317_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out3.log &
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200319"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out5.log &
 

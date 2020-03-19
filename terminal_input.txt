@@ -14,12 +14,12 @@ nohup python deeplab/train.py \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
     --decoder_output_stride=4 \
-    --train_crop_size="300,300" \
+    --train_crop_size="513,513" \
     --train_batch_size=4 \
     --dataset="ade20k" \
     --tf_initial_checkpoint="/home/ubuntu/data/deeplabv3_mnv2_ade20k_train_2018_12_03/model.ckpt" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200317" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out4.log &
 
 nohup python deeplab/vis.py \
     --logtostderr \
@@ -31,5 +31,5 @@ nohup python deeplab/vis.py \
     --dataset="ade20k" \
     --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200317"\
     --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200317_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out2.log &
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out3.log &
 

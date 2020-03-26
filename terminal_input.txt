@@ -33,3 +33,8 @@ nohup python deeplab/vis.py \
     --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200326_img"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200326_img.log &
 
+python ./remove_gt_colormap.py  \
+  --original_gt_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/annotations/training/" \
+  --segmentation_format="jpg" \
+  --output_dir="/home/ubuntu/data/bonnet_dataset/gray/training" \
+

@@ -18,8 +18,8 @@ nohup python deeplab/train.py \
     --train_batch_size=4 \
     --dataset="bonnet" \
     --tf_initial_checkpoint="/home/ubuntu/data/deeplabv3_mnv2_ade20k_train_2018_12_03/model.ckpt" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319_2" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out6.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200326" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200326.log &
 
 nohup python deeplab/vis.py \
     --logtostderr \
@@ -29,7 +29,7 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="bonnet" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200319_2"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200319_2_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out7.log &
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_202003226"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200326_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200326_img.log &
 

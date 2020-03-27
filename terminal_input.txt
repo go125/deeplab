@@ -40,7 +40,7 @@ python deeplab/eval.py \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
     --decoder_output_stride=4 \
-    --vis_crop_size="900,900" \
+    --eval_crop_size="900,900" \
     --dataset="ade20k" \
     --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200327"\
     --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327_eval"\

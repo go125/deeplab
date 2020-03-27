@@ -1,5 +1,3 @@
-20200313
-
 python ./build_ade20k_data.py  \
   --train_image_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/images/training/" \
   --train_image_label_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/annotations/training/" \
@@ -45,3 +43,5 @@ python deeplab/eval.py \
     --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200327"\
     --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327_eval"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
+
+tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200327_eval/'

@@ -33,8 +33,15 @@ nohup python deeplab/vis.py \
     --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327_img"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200327_imgPM.log &
 
-python ./remove_gt_colormap.py  \
-  --original_gt_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/annotations/training/" \
-  --segmentation_format="jpg" \
-  --output_dir="/home/ubuntu/data/bonnet_dataset/gray/training" \
 
+python deeplab/eval.py \
+    --logtostderr \
+    --vis_split="val" \
+    --model_variant="mobilenet_v2" \
+    --output_stride=16 \
+    --decoder_output_stride=4 \
+    --vis_crop_size="900,900" \
+    --dataset="ade20k" \
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200327"\
+    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327_eval"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"

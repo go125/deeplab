@@ -28,7 +28,7 @@ nohup python deeplab/vis.py \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
     --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_2"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2_img_3910"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2_img_10000"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200330_3_img.log &
 
 
@@ -40,8 +40,8 @@ python deeplab/eval.py \
     --decoder_output_stride=4 \
     --eval_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_3"\
-    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_3_eval"\
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_2"\
+    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2_eval"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
 
-tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200330_3_eval/'
+tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200330_2_eval/'

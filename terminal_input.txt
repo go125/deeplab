@@ -7,7 +7,7 @@ python ./build_ade20k_data.py  \
 
 nohup python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=3000 \
+    --training_number_of_steps=5000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
@@ -27,8 +27,8 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_3"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_3_img"\
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_2"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2_img_2603"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200330_3_img.log &
 
 

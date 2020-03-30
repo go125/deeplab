@@ -15,9 +15,8 @@ nohup python deeplab/train.py \
     --train_crop_size="513,513" \
     --train_batch_size=4 \
     --dataset="ade20k" \
-    --tf_initial_checkpoint="/home/ubuntu/data/deeplabv3_mnv2_ade20k_train_2018_12_03/model.ckpt" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200327PM.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200330.log &
 
 nohup python deeplab/vis.py \
     --logtostderr \
@@ -27,9 +26,9 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200327"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200327_imgPM.log &
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200330_imgPM.log &
 
 
 python deeplab/eval.py \
@@ -40,8 +39,8 @@ python deeplab/eval.py \
     --decoder_output_stride=4 \
     --eval_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200327"\
-    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200327_eval"\
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330"\
+    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_eval"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
 
-tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200327_eval/'
+tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200330_eval/'

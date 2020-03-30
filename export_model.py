@@ -20,6 +20,9 @@ import tensorflow as tf
 
 from tensorflow.contrib import quantize as contrib_quantize
 from tensorflow.python.tools import freeze_graph
+import sys
+sys.path.append("./")
+sys.path.append("./slim/")
 from deeplab import common
 from deeplab import input_preprocess
 from deeplab import model

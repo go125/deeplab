@@ -45,3 +45,11 @@ python deeplab/eval.py \
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
 
 tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200330_2_eval/'
+
+
+python deeplab/export_model.py \
+    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200330_2"\
+    --export_path="/home/ubuntu/data/bonnet_dataset/result_20200330_2_export"\
+    --num_classes=151 \
+    --crop_size="513,513" \
+ 

@@ -51,7 +51,7 @@ tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200331_2_eval/'
 
 
 python deeplab/export_model.py \
-    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200331_2/model.ckpt-1333:"\
-    --export_path="/home/ubuntu/data/bonnet_dataset/frozen_inference_graph.pb"\
+    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200331_2/model.ckpt-1333"\
+    --export_path="/home/ubuntu/frozen_inference_graph.pb"\
     --num_classes=151 \
     --quantize_delay_step=0 \

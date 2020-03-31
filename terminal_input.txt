@@ -7,17 +7,20 @@ python ./build_ade20k_data.py  \
 
 nohup python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=10000 \
+    --training_number_of_steps=3000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
     --decoder_output_stride=4 \
     --train_crop_size="513,513" \
     --train_batch_size=4 \
+    --base_learning_rate=3e-5 \
     --dataset="ade20k" \
+    --initialize_last_layer \
+    --quantize_delay_step=0 \
     --tf_initial_checkpoint="/home/ubuntu/data/deeplabv3_mnv2_ade20k_train_2018_12_03/model.ckpt" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200330_2.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200331.log &
 
 nohup python deeplab/vis.py \
     --logtostderr \
@@ -27,9 +30,9 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_2"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2_img_10000"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200330_3_img.log &
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200331"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200331_img.log &
 
 
 python deeplab/eval.py \
@@ -40,15 +43,15 @@ python deeplab/eval.py \
     --decoder_output_stride=4 \
     --eval_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200330_2"\
-    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200330_2_eval"\
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200331"\
+    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331_eval"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
 
-tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200330_2_eval/'
+tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200331_eval/'
 
 
 python deeplab/export_model.py \
-    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200330_2/model.ckpt-10000"\
+    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200331/model.ckpt-3000"\
     --export_path="/home/ubuntu/data/bonnet_dataset/frozen_inference_graph.pb"\
     --num_classes=151 \
     --quantize_delay_step=0 \

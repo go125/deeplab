@@ -7,7 +7,7 @@ python ./build_ade20k_data.py  \
 
 nohup python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=11000 \
+    --training_number_of_steps=5000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \

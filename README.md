@@ -2,4 +2,4 @@
 
 This code is revised from [deeplab](https://github.com/tensorflow/models/tree/master/research/deeplab) code.
 
-This code is used to make bonnet segmentation model.
+This code generates bonnet segmentation model.

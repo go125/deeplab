@@ -4,6 +4,8 @@ This code is revised from [deeplab](https://github.com/tensorflow/models/tree/ma
 
 This code generates bonnet segmentation model.
 
+# Preparing data
+
 ```
 python ./build_ade20k_data.py  \
   --train_image_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/images/training/" \
@@ -12,6 +14,8 @@ python ./build_ade20k_data.py  \
   --val_image_label_folder="/home/ubuntu/data/bonnet_dataset/seg_and_img/annotations/validation/" \
   --output_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
 ```
+
+# Training
 
 ```
 nohup python deeplab/train.py \
@@ -31,6 +35,8 @@ nohup python deeplab/train.py \
     --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331_2" \
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200331_2.log &
 ```
+
+# Visualizing Result
 
 ```
 nohup python deeplab/vis.py \

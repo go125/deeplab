@@ -32,8 +32,8 @@ nohup python deeplab/train.py \
     --initialize_last_layer \
     --quantize_delay_step=0 \
     --tf_initial_checkpoint="/home/ubuntu/data/bonnet_dataset/result_20200330_2/model.ckpt-10000" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331_2" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200331_2.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200512" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200512.log &
 ```
 
 # Visualizing Result

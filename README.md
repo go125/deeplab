@@ -52,6 +52,7 @@ nohup python deeplab/vis.py \
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200331_2_img.log &
 ```
 
+# Evaluation
 
 ```
 python deeplab/eval.py \

@@ -17,6 +17,8 @@ python ./build_ade20k_data.py  \
 
 # Training
 
+## Execute at /home/ubuntu/git/models/research/
+
 ```
 nohup python deeplab/train.py \
     --logtostderr \

@@ -32,8 +32,8 @@ nohup python deeplab/train.py \
     --initialize_last_layer \
     --quantize_delay_step=0 \
     --tf_initial_checkpoint="/home/ubuntu/data/bonnet_dataset_20200331/result_20200330_2/model.ckpt-10000" \
-    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200512" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200512.log &
+    --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200513" \
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200513.log &
 ```
 
 # Visualizing Result
@@ -47,9 +47,9 @@ nohup python deeplab/vis.py \
     --decoder_output_stride=4 \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200331_2"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331_2_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200331_2_img.log &
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200513"\
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200513_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200513_img.log &
 ```
 
 # Evaluation
@@ -63,18 +63,18 @@ python deeplab/eval.py \
     --decoder_output_stride=4 \
     --eval_crop_size="900,900" \
     --dataset="ade20k" \
-    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200331_2"\
-    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200331_2_eval"\
+    --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200513"\
+    --eval_logdir="/home/ubuntu/data/bonnet_dataset/result_20200513_eval"\
     --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord"
 ```
 
 ```
-tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200331_2_eval/'
+tensorboard --logdir='/home/ubuntu/data/bonnet_dataset/result_20200513_eval/'
 ```
 
 ```
 python deeplab/export_model.py \
-    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200331_2/model.ckpt-2001"\
+    --checkpoint_path="/home/ubuntu/data/bonnet_dataset/result_20200513/model.ckpt-2001"\
     --export_path="/home/ubuntu/frozen_inference_graph.pb"\
     --num_classes=151 \
     --output_stride=16 \

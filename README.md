@@ -50,8 +50,8 @@ nohup python deeplab/vis.py \
     --vis_crop_size="900,900" \
     --dataset="ade20k" \
     --checkpoint_dir="/home/ubuntu/data/bonnet_dataset/result_20200513"\
-    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200513_2773_img"\
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200514_img.log &
+    --vis_logdir="/home/ubuntu/data/bonnet_dataset/result_20200513_10000_img"\
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200515_img.log &
 ```
 
 # Evaluation

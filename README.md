@@ -22,7 +22,7 @@ Execute at /home/ubuntu/git/models/research/.
 ```
 nohup python deeplab/train.py \
     --logtostderr \
-    --training_number_of_steps=5000 \
+    --training_number_of_steps=10000 \
     --train_split="train" \
     --model_variant="mobilenet_v2" \
     --output_stride=16 \
@@ -35,7 +35,7 @@ nohup python deeplab/train.py \
     --quantize_delay_step=0 \
     --tf_initial_checkpoint="/home/ubuntu/data/bonnet_dataset_20200331/result_20200330_2/model.ckpt-10000" \
     --train_logdir="/home/ubuntu/data/bonnet_dataset/result_20200513" \
-    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200513.log &
+    --dataset_dir="/home/ubuntu/data/bonnet_dataset/tfrecord" >out20200515.log &
 ```
 
 # Visualizing Result
